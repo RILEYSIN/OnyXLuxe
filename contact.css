@@ -1,0 +1,321 @@
+/* Universal Box Model & Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box; /* Crucial for responsive layouts */
+}
+body {
+  font-family: 'Inter', sans-serif; /* Apply Inter font family */
+  line-height: 1.6; /* Improve readability */
+  color: #333; /* Default text color */
+  background-color: #f4f7f6; /* A slightly off-white background for the page */
+}
+/* Base Header Styles */
+.Header {
+  display: flex; /* Use flexbox to arrange children */
+  justify-content: space-between; /* Distribute space: logo to left, nav to right */
+  align-items: center; /* Vertically center items */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if space is limited */
+  background-color: #ffffff; /* White background for header */
+  padding: 20px 30px; /* Padding around the header content */
+  border-radius: 10px; /* Rounded corners for the header */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* More prominent shadow for depth */
+  margin: 15px; /* Margin around the header */
+  width: calc(100% - 30px); /* Calculate width to account for 15px margin on each side */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Styles for all anchor tags within the Header */
+.Header a {
+  color: #555; /* Text color */
+  text-align: center; /* Center text horizontally */
+  padding: 12px 18px; /* Padding for clickable area */
+  font-size: 17px; /* Font size */
+  line-height: 25px; /* Line height for vertical alignment */
+  border-radius: 8px; /* Rounded corners for links */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+  font-weight: 500;
+}
+
+/* Styles for the "Companylogo" (your huge text) */
+.Header a.logo {
+  font-size: 32px; /* Larger font size for the logo on desktop */
+  font-weight: 700; /* Bold font weight */
+  color: #007bff; /* Distinct color for the logo */
+  margin-right: auto; /* Pushes the logo to the left, separating it from header-right */
+  padding: 10px 0; /* Additional padding for the logo, no horizontal padding as it's a logo */
+}
+
+/* Hover effect for all links */
+.Header a:not(.logo):hover { /* Apply hover to nav links, not the logo */
+  background-color: #e6f2ff; /* Lighter blue background on hover */
+  color: #0056b3; /* Darker blue text on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active state for the current page link */
+.Header a.active {
+  background-color: dodgerblue; /* Blue background for active link */
+  color: white; /* White text for active link */
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow for active link */
+}
+
+/* Header Right (Navigation Container) */
+.header-right {
+  display: flex; /* Use flexbox to arrange navigation links horizontally */
+  align-items: center; /* Vertically center navigation links */
+  gap: 15px; /* Space between navigation links */
+}
+
+/* Media Query for Small Screens (e.g., up to 768px wide) */
+@media screen and (max-width: 768px) {
+  .Header {
+    flex-direction: column; /* Change flex direction to column to stack items vertically */
+    align-items: flex-start; /* Align stacked items to the start (left) */
+    padding: 15px 20px; /* Adjust padding for the stacked layout */
+    margin: 10px;
+    width: calc(100% - 20px); /* Adjust width for 10px margin on each side */
+  }
+
+  /* Adjust logo on small screens */
+  .Header a.logo {
+    font-size: 28px; /* Reduce font size for smaller screens */
+    width: 100%; /* Make the logo take full width */
+    text-align: center; /* Center the logo text */
+    margin-right: 0; /* Remove auto margin as it's now stacked */
+    margin-bottom: 20px; /* Add space below the logo */
+    padding: 0; /* Remove padding */
+  }
+
+  /* Adjust navigation container on small screens */
+  .header-right {
+    flex-direction: column; /* Change flex direction to column to stack nav links vertically */
+    width: 100%; /* Make the navigation take full width */
+    text-align: center; /* Center the navigation links */
+    background-color: #f9f9f9; /* Add a slightly different background for the mobile menu */
+    padding: 15px 0; /* Add padding inside the mobile menu */
+    border-top: 1px solid #eee; /* Add a top border for separation from the logo */
+    border-radius: 0 0 10px 10px; /* Rounded bottom corners for the mobile menu */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow for the mobile menu */
+    gap: 5px; /* Reduce gap between items as they are now stacked */
+  }
+
+  /* Styles for individual links in the mobile menu */
+  .header-right a {
+    display: block; /* Make links take full width within the stacked column */
+    width: 90%; /* Slightly less than full width for inner padding */
+    margin: 0 auto; /* Center the links */
+    text-align: center; /* Center text */
+    padding: 10px 0; /* Padding for each link */
+    border-bottom: 1px solid #f0f0f0; /* Add a light border at the bottom for separation */
+  }
+
+  /* Remove border from the last link in the mobile menu */
+  .header-right a:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Optional: Further refinement for even smaller screens (e.g., up to 480px wide) */
+@media screen and (max-width: 480px) {
+  .Header a.logo {
+    font-size: 24px; /* Even smaller font for very small screens */
+  }
+  .Header {
+    padding: 10px 15px;
+  }
+}
+
+/* Contact Form Specific Styles */
+.contact-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 100px); /* Adjust based on header height */
+  padding: 20px;
+}
+
+.contact-form-wrapper {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px; /* Limit form width for better readability */
+  margin-top: 30px; /* Space below the header */
+  margin-bottom: 30px;
+}
+
+.contact-form-wrapper h1 {
+  text-align: center;
+  color: #007bff;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  font-weight: 700;
+}
+
+.contact-form-wrapper form p {
+  font-size: 1em;
+  color: #555;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.contact-form-wrapper form input[type="text"],
+.contact-form-wrapper form input[type="email"],
+.contact-form-wrapper form input[type="tel"],
+.contact-form-wrapper form textarea { /* Added textarea for message for better user experience */
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-wrapper form input[type="text"]::placeholder,
+.contact-form-wrapper form input[type="email"]::placeholder,
+.contact-form-wrapper form input[type="tel"]::placeholder,
+.contact-form-wrapper form textarea::placeholder {
+  color: #aaa;
+}
+
+.contact-form-wrapper form input[type="text"]:focus,
+.contact-form-wrapper form input[type="email"]:focus,
+.contact-form-wrapper form input[type="tel"]:focus,
+.contact-form-wrapper form textarea:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+.contact-form-wrapper form input[type="submit"] {
+  width: 100%;
+  background-color: #007bff;
+  color: white;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.contact-form-wrapper form input[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+/* Media Query for smaller screens for the form */
+@media screen and (max-width: 600px) {
+  .contact-form-wrapper {
+    padding: 25px;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+  .contact-form-wrapper h1 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .contact-form-wrapper form input[type="submit"] {
+    padding: 12px;
+    font-size: 1em;
+  }
+}
+
+/* --- Footer Styles --- */
+footer {
+  background-color: #222;
+  color: #f4f7f6;
+  padding: 14px 0 6px 0;   /* Reduced vertical padding for a shorter footer */
+  margin-top: 30px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;                /* Less gap between items */
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  color: #f4f7f6;
+  font-size: 1em;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #007bff;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social i {
+  font-size: 1.7em;
+  color: #f4f7f6;
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  padding: 7px;
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.footer-social i:hover {
+  color: #007bff;
+  transform: translateY(-2px) scale(1.07);
+  box-shadow: 0 0 10px rgba(0,123,255,0.5);
+}
+
+.footer-copyright {
+  font-size: 0.9em;
+  color: #888;
+  margin-bottom: 0;
+  margin-top: 2px;
+}
+
+/* Responsive adjustments for footer */
+@media screen and (max-width: 768px) {
+  .footer-links { gap: 12px; }
+  .footer-social i { font-size: 1.3em; }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-links { flex-direction: column; gap: 8px; }
+  .footer-links a { padding: 4px 0; }
+  .footer-social { gap: 7px; }
+  .footer-social i { font-size: 1.1em; }
+}
