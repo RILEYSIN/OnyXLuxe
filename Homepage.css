@@ -1,0 +1,507 @@
+/* Universal Box Model & Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box; /* Crucial for responsive layouts */
+}
+
+body {
+    font-family: 'Inter', sans-serif; /* Apply Inter font family */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Default text color */
+    background-color: #f4f7f6; /* A slightly off-white background for the page */
+    text-align: left; /* Default text alignment to left for the whole body */
+}
+
+
+/* Base Header Styles */
+.Header {
+    display: flex; /* Use flexbox to arrange children */
+    justify-content: space-between; /* Distribute space: logo to left, nav to right */
+    align-items: center; /* Vertically center items */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if space is limited */
+    background-color: #ffffff; /* White background for header */
+    padding: 20px 30px; /* Padding around the header content */
+    border-radius: 10px; /* Rounded corners for the header */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* More prominent shadow for depth */
+    margin: 15px; /* Margin around the header */
+    width: calc(100% - 30px); /* Calculate width to account for 15px margin on each side */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styles for all anchor tags within the Header */
+.Header a {
+    color: #555; /* Text color */
+    text-align: center; /* Center text horizontally */
+    padding: 12px 18px; /* Padding for clickable area */
+    font-size: 17px; /* Font size */
+    line-height: 25px; /* Line height for vertical alignment */
+    border-radius: 8px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease; /* Smooth transition for hover effects */
+    font-weight: 500;
+}
+
+/* Styles for the "Companylogo" (your huge text) */
+.Header a.logo {
+    font-size: 32px; /* Larger font size for the logo on desktop */
+    font-weight: 700; /* Bold font weight */
+    color: #007bff; /* Distinct color for the logo */
+    margin-right: auto; /* Pushes the logo to the left, separating it from header-right */
+    padding: 10px 0; /* Additional padding for the logo, no horizontal padding as it's a logo */
+}
+
+/* Hover effect for all links */
+.Header a:not(.logo):hover { /* Apply hover to nav links, not the logo */
+    background-color: #e6f2ff; /* Lighter blue background on hover */
+    color: #0056b3; /* Darker blue text on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Active state for the current page link */
+.Header a.active {
+    background-color: dodgerblue; /* Blue background for active link */
+    color: white; /* White text for active link */
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3); /* Subtle shadow for active link */
+}
+
+/* Header Right (Navigation Container) */
+.header-right {
+    display: flex; /* Use flexbox to arrange navigation links horizontally */
+    align-items: center; /* Vertically center navigation links */
+    gap: 15px; /* Space between navigation links */
+}
+
+/* Media Query for Small Screens (e.g., up to 768px wide) */
+@media screen and (max-width: 768px) {
+    .Header {
+        flex-direction: column; /* Change flex direction to column to stack items vertically */
+        align-items: flex-start; /* Align stacked items to the start (left) */
+        padding: 15px 20px; /* Adjust padding for the stacked layout */
+        margin: 10px;
+        width: calc(100% - 20px); /* Adjust width for 10px margin on each side */
+    }
+
+    /* Adjust logo on small screens */
+    .Header a.logo {
+        font-size: 28px; /* Reduce font size for smaller screens */
+        width: 100%; /* Make the logo take full width */
+        text-align: center; /* Align logo text to left on mobile */
+        margin-right: 0; /* Remove auto margin as it's now stacked */
+        margin-bottom: 20px; /* Add space below the logo */
+        padding: 0; /* Remove padding */
+    }
+
+    /* Adjust navigation container on small screens */
+    .header-right {
+        flex-direction: column; /* Change flex direction to column to stack nav links vertically */
+        width: 100%; /* Make the navigation take full width */
+        text-align: center; /* Align the navigation links to left */
+        background-color: #f9f9f9; /* Add a slightly different background for the mobile menu */
+        padding: 15px 0; /* Add padding inside the mobile menu */
+        border-top: 1px solid #eee; /* Add a top border for separation from the logo */
+        border-radius: 0 0 10px 10px; /* Rounded bottom corners for the mobile menu */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow for the mobile menu */
+        gap: 5px; /* Reduce gap between items as they are now stacked */
+    }
+
+    /* Styles for individual links in the mobile menu */
+    .header-right a {
+        display: block; /* Make links take full width within the stacked column */
+        width: 90%; /* Slightly less than full width for inner padding */
+        margin: 0 auto; /* Center the links */
+        text-align: center; /* Align text to left */
+        padding: 10px 0; /* Padding for each link */
+        border-bottom: 1px solid #f0f0f0; /* Add a light border at the bottom for separation */
+    }
+
+    /* Remove border from the last link in the mobile menu */
+    .header-right a:last-child {
+        border-bottom: none;
+    }
+}
+
+/* Optional: Further refinement for even smaller screens (e.g., up to 480px wide) */
+@media screen and (max-width: 480px) {
+    .Header a.logo {
+        font-size: 24px; /* Even smaller font for very small screens */
+    }
+    .Header {
+        padding: 10px 15px;
+    }
+}
+
+/* Styles for the welcome banner section (IMG3.png) */
+.welcome-banner-section {
+    width: calc(100% - 30px); /* Take full width minus margin */
+    max-width: 1200px; /* Limit max width for better readability on large screens */
+    margin: 30px auto; /* Center the section with vertical margin */
+    padding: 20px; /* Padding inside the section */
+    text-align: left; /* Align content to the left */
+    background-color: #ffffff; /* Add a background to the section */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1); /* Subtle shadow */
+    overflow: hidden; /* Ensure image corners are handled */
+}
+
+.welcome-banner-image {
+    width: 100%; /* Image takes full width of its container */
+    max-height: 450px; /* Max height for the banner image to prevent it from being too tall */
+    object-fit: cover; /* Cover the area, cropping if necessary */
+    border-radius: 10px; /* Slightly rounded corners for the image itself */
+    display: block; /* Remove extra space below image */
+    margin: 0; /* Align image to the left */
+}
+
+/* Adjustments for smaller screens for the welcome banner */
+@media screen and (max-width: 768px) {
+    .welcome-banner-section {
+        margin: 20px auto;
+        padding: 15px;
+        width: calc(100% - 20px); /* Adjust width for 10px margin on each side */
+    }
+    .welcome-banner-image {
+        max-height: 300px; /* Smaller height on mobile */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .welcome-banner-section {
+        margin: 15px auto;
+        padding: 10px;
+        border-radius: 10px;
+        width: calc(100% - 20px); /* Adjust width for 10px margin on each side */
+    }
+    .welcome-banner-image {
+        max-height: 200px; /* Even smaller height on very small mobile */
+        border-radius: 8px;
+    }
+}
+
+
+/* New CSS for Ticket Previews */
+.ticket-previews-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: center; /* Center cards horizontally */
+    gap: 30px; /* Space between ticket cards */
+    padding: 60px 20px; /* Increased padding around the container */
+    background-color: #f4f7f6; /* Light background for the section */
+    margin-top: 30px; /* Space below the main content/header */
+}
+
+.ticket-previews-container h2 {
+    width: 100%; /* Make the heading take full width */
+    text-align: center; /* Center the heading text */
+    margin-bottom: 40px; /* More space below heading */
+    font-size: 2.8em; /* Larger heading */
+    color: #222;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05); /* Subtle text shadow */
+}
+
+
+.ticket-card {
+    background-color: white;
+    border-radius: 15px; /* More rounded corners */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); /* Stronger, softer shadow than header */
+    width: 340px; /* Increased width as requested */
+    padding-bottom: 25px; /* Padding at the bottom for consistent spacing */
+    text-align: left; /* Align card text to the left */
+    overflow: hidden; /* Ensures image corners are rounded correctly */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack image and details vertically */
+    justify-content: space-between; /* Push button to bottom if content varies */
+}
+
+.ticket-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+}
+
+.ticket-image-wrapper {
+    width: 100%;
+    height: 220px; /* Fixed height for consistency of images, slightly larger */
+    overflow: hidden;
+    border-radius: 15px 15px 0 0; /* Rounded top corners */
+    margin-bottom: 20px; /* Space between image and details */
+}
+
+.ticket-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+    display: block; /* Remove extra space below image */
+}
+
+.ticket-details {
+    padding: 0 25px; /* Padding inside the details section */
+    flex-grow: 1; /* Allows details to take available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.ticket-title {
+    font-size: 2em; /* Larger title */
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px; /* Increased margin for better spacing after potential multi-line title */
+    line-height: 1.2; /* Ensure good line spacing for wrapped text */
+    /* Removed: white-space: nowrap; overflow: hidden; text-overflow: ellipsis; */
+}
+
+.ticket-description {
+    font-size: 1.05em;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px; /* More space before the button */
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+/* Styles for the preview details container */
+.ticket-preview-details {
+    text-align: left;
+    margin-bottom: 20px; /* Space between preview and buttons */
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    font-size: 0.95em;
+    color: #444;
+    line-height: 1.5;
+    display: none; /* Hidden by default */
+}
+
+.ticket-preview-details p {
+    margin-bottom: 5px;
+}
+
+.ticket-preview-details p:last-child {
+    margin-bottom: 0;
+}
+
+/* Styles for the new preview button */
+.preview-button {
+    background-color: #6c757d; /* A different color for distinction */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 90%;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto 15px auto; /* Margin at bottom to separate from buy button */
+    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+}
+
+.preview-button:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(108, 117, 125, 0.4);
+}
+
+
+.buy-ticket-button {
+    background-color: dodgerblue; /* Blue button, similar to active header link */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px; /* Slightly more rounded button */
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 90%; /* Make button take up most of the width */
+    max-width: 280px; /* Cap the max width */
+    display: block; /* Make it a block element to center with margin auto */
+    margin: 0 auto; /* Center the button */
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3); /* Subtle shadow for button */
+}
+
+.buy-ticket-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4); /* Enhanced shadow on hover */
+}
+
+/* Media Query for responsiveness for ticket cards */
+@media screen and (max-width: 768px) {
+    .ticket-previews-container {
+        padding: 40px 15px;
+        gap: 25px; /* Reduce gap on smaller screens */
+    }
+
+    .ticket-card {
+        width: 90%; /* Wider on smaller screens, but not full width */
+        max-width: 400px; /* Max width to prevent it from getting too wide on tablets */
+    }
+
+    .ticket-previews-container h2 {
+        font-size: 2.2em; /* Adjust heading size */
+        margin-bottom: 30px;
+    }
+
+    .ticket-title {
+        font-size: 1.7em; /* Adjust title size */
+    }
+
+    .ticket-image-wrapper {
+        height: 200px; /* Adjust image height */
+    }
+
+    .buy-ticket-button,
+    .preview-button { /* Apply to both buttons */
+        width: 85%; /* Adjust button width */
+        padding: 14px 25px;
+        font-size: 1.1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .ticket-previews-container {
+        padding: 30px 10px;
+        gap: 20px;
+    }
+
+    .ticket-card {
+        width: 95%; /* Ensure it's almost full width on very small screens */
+        max-width: none; /* Remove max-width for very small screens */
+    }
+
+    .ticket-image-wrapper {
+        height: 180px; /* Slightly smaller image height */
+    }
+
+    .ticket-details {
+        padding: 0 20px;
+    }
+
+    .ticket-title {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    .ticket-description {
+        font-size: 0.95em;
+        margin-bottom: 25px;
+    }
+
+    .buy-ticket-button,
+    .preview-button { /* Apply to both buttons */
+        padding: 12px 20px;
+        font-size: 1em;
+        width: 90%;
+    }
+}
+
+/* --- Footer Styles --- */
+footer {
+    background-color: #222;
+    color: #f4f7f6;
+    padding: 18px 0 10px 0;   /* Reduced vertical padding */
+    margin-top: 30px;         /* Less space above footer */
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;                /* Less gap between items */
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0;         /* Remove extra margin if present */
+}
+
+.footer-tagline {
+    font-size: 1.1em;
+    color: #bbb;
+    margin-bottom: 10px;      /* Less margin below tagline */
+    max-width: 600px;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center links */
+    gap: 15px;                /* Less gap between links */
+    margin-bottom: 10px;      /* Less margin below links */
+}
+
+.footer-links a {
+    color: #f4f7f6;
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #007bff;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center; /* Center social icons */
+    gap: 10px;                /* Less gap between icons */
+    margin-bottom: 10px;      /* Less margin below icons */
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-social i {
+    font-size: 2em;
+    color: #f4f7f6;
+    background-color: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    padding: 8px;
+    transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
+}
+
+.footer-social i:hover {
+    color: #007bff;
+    transform: translateY(-3px) scale(1.08);
+    box-shadow: 0 0 15px rgba(0,123,255,0.6);
+}
+
+.footer-copyright {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 0;
+    margin-top: 5px;
+}
+
+/* Responsive adjustments for footer */
+@media screen and (max-width: 768px) {
+    .footer-logo { font-size: 2em; }
+    .footer-links { gap: 15px; margin-bottom: 20px; }
+    .footer-social i { font-size: 1.6em; }
+}
+
+@media screen and (max-width: 480px) {
+    .footer-logo { font-size: 1.8em; }
+    .footer-links { flex-direction: column; gap: 10px; }
+    .footer-links a { padding: 5px 0; }
+    .footer-social { gap: 10px; }
+    .footer-social i { font-size: 1.3em; }
+}
+
+
