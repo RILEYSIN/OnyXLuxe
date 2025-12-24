@@ -46,6 +46,12 @@ This is a frontend-only demo. In a production app, you'd need:
 - Payment integration (e.g., Paystack)
 - User authentication system
 
+## Contact
+
+GMAIL: balsitoyosi07@gmail.com
+whatsapp: +2347065632753
+linkedin: Balsit Adedayo
+
 ## License
 
 See LICENSE file.
