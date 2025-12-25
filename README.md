@@ -52,6 +52,11 @@ GMAIL: balsitoyosi07@gmail.com
 whatsapp: +2347065632753
 linkedin: Balsit Adedayo
 
+## issues
+
+no logout button on main page
+colour theme on main page vs login, signup page needs to rhyme more
+
 ## License
 
 See LICENSE file.
