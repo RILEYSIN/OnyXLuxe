@@ -346,6 +346,34 @@ footer {
   background-color: #0056b3;
 }
 
+.purchase-form button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+  width: 100%;
+  max-width: 300px;
+  align-self: center;
+}
+
+.purchase-form button[type="submit"]:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
+.purchase-form button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.3);
+}
+
 /* Responsive for purchase page */
 @media (max-width: 768px) {
   .purchase-container {
