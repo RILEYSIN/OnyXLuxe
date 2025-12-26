@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Purchase tickets securely at OnyXLuxe Tickets. Easy booking for your favorite events."
+    />
     <title>Purchase Ticket - OnyXLuxe Tickets</title>
     <link rel="stylesheet" href="purchase.css" />
     <!-- Reuse homepage CSS for consistency -->
@@ -19,9 +23,10 @@
     <div class="Header">
       <a href="#" class="logo">OnyXLuxe</a>
       <div class="header-right">
-        <a href="index.html">HOME</a>
-        <a href="#tickets">TICKETS</a>
+        <a href="index.html" class="active">HOME</a>
+        <a href="index.html#target">TICKETS</a>
         <a href="contact.html">CONTACTS</a>
+        <a href="login.html">LOGOUT</a>
       </div>
     </div>
 
@@ -78,7 +83,7 @@
           <option value="paypal">PayPal</option>
         </select>
 
-        <input type="submit" value="Complete Purchase" />
+        <button type="submit">Complete Purchase</button>
       </form>
     </section>
 

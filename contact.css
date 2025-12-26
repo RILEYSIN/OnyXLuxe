@@ -6,7 +6,7 @@
   box-sizing: border-box; /* Crucial for responsive layouts */
 }
 body {
-  font-family: 'Inter', sans-serif; /* Apply Inter font family */
+  font-family: "Inter", sans-serif; /* Apply Inter font family */
   line-height: 1.6; /* Improve readability */
   color: #333; /* Default text color */
   background-color: #f4f7f6; /* A slightly off-white background for the page */
@@ -20,9 +20,11 @@ body {
   background-color: #ffffff; /* White background for header */
   padding: 20px 30px; /* Padding around the header content */
   border-radius: 10px; /* Rounded corners for the header */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* More prominent shadow for depth */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* More prominent shadow for depth */
   margin: 15px; /* Margin around the header */
-  width: calc(100% - 30px); /* Calculate width to account for 15px margin on each side */
+  width: calc(
+    100% - 30px
+  ); /* Calculate width to account for 15px margin on each side */
   margin-left: auto;
   margin-right: auto;
 }
@@ -49,7 +51,8 @@ body {
 }
 
 /* Hover effect for all links */
-.Header a:not(.logo):hover { /* Apply hover to nav links, not the logo */
+.Header a:not(.logo):hover {
+  /* Apply hover to nav links, not the logo */
   background-color: #e6f2ff; /* Lighter blue background on hover */
   color: #0056b3; /* Darker blue text on hover */
   transform: translateY(-2px); /* Slight lift effect */
@@ -83,7 +86,7 @@ body {
   .Header a.logo {
     font-size: 28px; /* Reduce font size for smaller screens */
     width: 100%; /* Make the logo take full width */
-    text-align: center; /* Center the logo text */
+    text-align: center; /* Align logo text to left on mobile */
     margin-right: 0; /* Remove auto margin as it's now stacked */
     margin-bottom: 20px; /* Add space below the logo */
     padding: 0; /* Remove padding */
@@ -93,12 +96,12 @@ body {
   .header-right {
     flex-direction: column; /* Change flex direction to column to stack nav links vertically */
     width: 100%; /* Make the navigation take full width */
-    text-align: center; /* Center the navigation links */
+    text-align: center; /* Align the navigation links to left */
     background-color: #f9f9f9; /* Add a slightly different background for the mobile menu */
     padding: 15px 0; /* Add padding inside the mobile menu */
     border-top: 1px solid #eee; /* Add a top border for separation from the logo */
     border-radius: 0 0 10px 10px; /* Rounded bottom corners for the mobile menu */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Subtle shadow for the mobile menu */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow for the mobile menu */
     gap: 5px; /* Reduce gap between items as they are now stacked */
   }
 
@@ -107,7 +110,7 @@ body {
     display: block; /* Make links take full width within the stacked column */
     width: 90%; /* Slightly less than full width for inner padding */
     margin: 0 auto; /* Center the links */
-    text-align: center; /* Center text */
+    text-align: center; /* Align text to left */
     padding: 10px 0; /* Padding for each link */
     border-bottom: 1px solid #f0f0f0; /* Add a light border at the bottom for separation */
   }
@@ -141,7 +144,7 @@ body {
   background-color: #ffffff;
   padding: 40px;
   border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 500px; /* Limit form width for better readability */
   margin-top: 30px; /* Space below the header */
@@ -156,24 +159,26 @@ body {
   font-weight: 700;
 }
 
-.contact-form-wrapper form p {
+.contact-form-wrapper form label {
   font-size: 1em;
   color: #555;
   margin-bottom: 8px;
   font-weight: 600;
+  display: block;
 }
 
 .contact-form-wrapper form input[type="text"],
 .contact-form-wrapper form input[type="email"],
 .contact-form-wrapper form input[type="tel"],
-.contact-form-wrapper form textarea { /* Added textarea for message for better user experience */
+.contact-form-wrapper form textarea {
+  /* Added textarea for message for better user experience */
   width: 100%;
   padding: 14px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 8px;
   font-size: 1em;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   color: #333;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -194,7 +199,7 @@ body {
   outline: none;
 }
 
-.contact-form-wrapper form input[type="submit"] {
+.contact-form-wrapper form button[type="submit"] {
   width: 100%;
   background-color: #007bff;
   color: white;
@@ -204,7 +209,8 @@ body {
   font-size: 1.1em;
   font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
 }
 
@@ -237,10 +243,10 @@ body {
 footer {
   background-color: #222;
   color: #f4f7f6;
-  padding: 14px 0 6px 0;   /* Reduced vertical padding for a shorter footer */
+  padding: 14px 0 6px 0; /* Reduced vertical padding for a shorter footer */
   margin-top: 30px;
   text-align: center;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 .footer-container {
@@ -249,7 +255,7 @@ footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;                /* Less gap between items */
+  gap: 10px; /* Less gap between items */
   text-align: center;
 }
 
@@ -288,7 +294,7 @@ footer {
 .footer-social i {
   font-size: 1.7em;
   color: #f4f7f6;
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   padding: 7px;
   transition: transform 0.3s, box-shadow 0.3s, color 0.3s;
@@ -297,7 +303,7 @@ footer {
 .footer-social i:hover {
   color: #007bff;
   transform: translateY(-2px) scale(1.07);
-  box-shadow: 0 0 10px rgba(0,123,255,0.5);
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 .footer-copyright {
@@ -309,13 +315,26 @@ footer {
 
 /* Responsive adjustments for footer */
 @media screen and (max-width: 768px) {
-  .footer-links { gap: 12px; }
-  .footer-social i { font-size: 1.3em; }
+  .footer-links {
+    gap: 12px;
+  }
+  .footer-social i {
+    font-size: 1.3em;
+  }
 }
 
 @media screen and (max-width: 480px) {
-  .footer-links { flex-direction: column; gap: 8px; }
-  .footer-links a { padding: 4px 0; }
-  .footer-social { gap: 7px; }
-  .footer-social i { font-size: 1.1em; }
+  .footer-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-links a {
+    padding: 4px 0;
+  }
+  .footer-social {
+    gap: 7px;
+  }
+  .footer-social i {
+    font-size: 1.1em;
+  }
 }

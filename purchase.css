@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  text-decoration: none;
   box-sizing: border-box;
 }
 
@@ -125,6 +126,9 @@ body {
 @media screen and (max-width: 480px) {
   .Header a.logo {
     font-size: 24px; /* Even smaller font for very small screens */
+  }
+  .Header {
+    padding: 10px 15px;
   }
 }
 

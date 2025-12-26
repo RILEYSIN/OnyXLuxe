@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>OnyXLuxe Tickets</title>
+    <meta
+      name="description"
+      content="Contact OnyXLuxe Tickets - Get in touch with us for inquiries, support, and event information."
+    />
+    <title>Contact Us - OnyXLuxe Tickets</title>
     <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="contact.css" />
     <!-- Optional: Link to Google Fonts for 'Inter' if not locally available -->
@@ -16,28 +20,40 @@
     <div class="Header">
       <a href="#" class="logo">OnyXLuxe</a>
       <div class="header-right">
-        <a href="index.html" class="active">HOME</a>
-        <a href="index.html">TICKETS</a>
-        <a href="#">CONTACTS</a>
+        <a href="index.html">HOME</a>
+        <a href="index.html#target">TICKETS</a>
+        <a href="contact.html" class="active">CONTACTS</a>
+        <a href="login.html">LOGOUT</a>
       </div>
     </div>
     <div class="contact-container">
       <div class="contact-form-wrapper">
         <h1>CONTACT US</h1>
         <form>
-          <p>Full Name</p>
-          <input type="text" placeholder="Enter your name" />
+          <div class="input-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" />
+          </div>
 
-          <p>Gmail</p>
-          <input type="email" placeholder="email" />
+          <div class="input-group">
+            <label for="email">Gmail</label>
+            <input type="email" id="email" placeholder="email" />
+          </div>
 
-          <p>Phone Number</p>
-          <input type="tel" placeholder="mobile no" />
+          <div class="input-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="mobile no" />
+          </div>
 
-          <p>Message</p>
-          <!-- Changed input type="text" to textarea for better message input -->
-          <textarea placeholder="Your message here..." rows="5"></textarea>
-          <input type="submit" value="Submit" />
+          <div class="input-group">
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              placeholder="Your message here..."
+              rows="5"
+            ></textarea>
+          </div>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>
