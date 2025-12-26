@@ -57,6 +57,7 @@ linkedin: Balsit Adedayo
 no logout button on main page, issue fixed.
 colour theme on main page vs login, signup page needs to rhyme more , issue fixed
 new page where people that want to post their evemts on my website can add details needed and send to the website manager
+terms and conditions not present
 
 ## License
 
