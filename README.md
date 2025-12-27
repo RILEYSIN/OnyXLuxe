@@ -51,6 +51,7 @@ This is a frontend-only demo. In a production app, you'd need:
 GMAIL: balsitoyosi07@gmail.com
 whatsapp: +2347065632753
 linkedin: Balsit Adedayo
+github: rileysin (username ) balsitoyosi(display name)
 
 ## issues
 
